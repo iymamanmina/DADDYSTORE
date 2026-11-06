@@ -13,7 +13,7 @@ This package keeps the existing DADDYS STORE storefront UI and replaces the orig
 
 ## Required external setup
 
-This is a deployment-prepared source package, not a live deployed site. No Supabase credentials, Netlify site, GitHub repository target or public Netlify URL have been written into it.
+This is a deployment-prepared source package. The Supabase project and database schema are provisioned. The source is staged in the `daddys-store` folder on the `daddys-store-deploy` branch of the connected GitHub repository. A Netlify site and its server-side secrets are not yet configured.
 
 ### 1. Create/configure Supabase
 
@@ -39,9 +39,9 @@ The script asks for a password with terminal input hidden and stores only a PBKD
 
 ### 3. Deploy to Netlify
 
-1. Push this project folder to a GitHub repository you control. Commit the source files, but never `.env`, database passwords, or service-role keys.
-2. In Netlify choose **Add new site → Import an existing project**, connect GitHub, and select that repository.
-3. Netlify should read `netlify.toml`. The build command is `npm install --no-audit --no-fund`, publish directory is `static`, and functions directory is `netlify/functions`.
+1. The project is already staged at [iymamanmina/lokeshbhai — branch `daddys-store-deploy`, folder `daddys-store`](https://github.com/iymamanmina/lokeshbhai/tree/daddys-store-deploy/daddys-store). The repository already had unrelated files, so the store was isolated in its own folder and branch; `main` was left unchanged. No `.env`, database password or service-role key was committed.
+2. In Netlify choose **Add new site → Import an existing project**, connect GitHub, and select `iymamanmina/lokeshbhai` with branch `daddys-store-deploy`.
+3. Set Netlify **Base directory** to `daddys-store` so Netlify reads the correct `netlify.toml`. The build command is `npm install --no-audit --no-fund`, publish directory is `static`, and functions directory is `netlify/functions`.
 4. In **Site configuration → Environment variables**, add the variables below. Set `PUBLIC_BASE_URL` to the exact free Netlify URL after the first site is created, then redeploy.
 5. Publish using the assigned `https://YOUR-SITE.netlify.app` address. No paid custom domain is required.
 
@@ -112,4 +112,4 @@ A Supabase project has been created for this store in the Mumbai region and the 
 - First admin username: `owner` (the initial password is shared separately with the store owner; it is not stored in this archive).
 - BGMI account sales remain disabled by default until the store owner confirms appropriate authorization.
 
-The GitHub repository and Netlify site have **not** been created or deployed from this environment. Netlify environment variables still need to be added in the Netlify dashboard. Do not commit `.env` or any database/service-role secret.
+The GitHub source is committed on branch `daddys-store-deploy` under `daddys-store/`. The Netlify site has **not** been created or deployed from this environment because no Netlify account-control connection is available here. Netlify environment variables still need to be added in the Netlify dashboard. Do not commit `.env` or any database/service-role secret.

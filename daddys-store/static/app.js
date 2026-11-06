@@ -5,7 +5,7 @@
   const view = $('#view');
   const LS = {visitor:'dds_visitor_id',cart:'dds_cart',compare:'dds_compare',recent:'dds_recent',adminTab:'dds_admin_tab',lastOrder:'dds_last_order',lastSeller:'dds_last_seller'};
   const visitorId = localStorage.getItem(LS.visitor) || (() => { const x='visitor_'+crypto.randomUUID(); localStorage.setItem(LS.visitor,x); return x; })();
-  let config = {store:{name:'DADDYS STORE',tagline:'THE ULTIMATE BGMI MARKETPLACE',hero_title:'ENTER THE ARMORY',hero_subtitle:'Explore premium inventories, rare collections and authorized UC packages.',hero_image:'/assets/daddys-store-hero.webp'},payments:{upi_enabled:false,whatsapp_enabled:true,telegram_enabled:true,default_method:'whatsapp'}};
+  let config = {store:{name:'DADDYS STORE',tagline:'THE ULTIMATE BGMI MARKETPLACE',hero_title:'ENTER THE ARMORY',hero_subtitle:'Explore premium inventories, rare collections and authorized UC packages.',hero_image:'/assets/daddys-store-hero.svg'},payments:{upi_enabled:false,whatsapp_enabled:true,telegram_enabled:true,default_method:'whatsapp'}};
   let cachedAccounts = [];
   let adminData = {accounts:[],catalog:[],uc:[],sellers:[],orders:[],settings:null};
   let adminTab = localStorage.getItem(LS.adminTab) || 'overview';
@@ -40,7 +40,7 @@
   const del = url => api(url,{method:'DELETE'});
   const empty = (title,desc,cta='') => `<div class="empty-state"><b>${esc(title)}</b><span>${esc(desc)}</span>${cta?`<div class="spacer"></div>${cta}`:''}</div>`;
   const pageHead = (eyebrow,title,desc='') => `<div class="page-head"><span class="eyebrow">${esc(eyebrow)}</span><h1>${esc(title)}</h1><p>${esc(desc)}</p></div>`;
-  const heroImage = () => safeUrl(config.store?.hero_image || '/assets/daddys-store-hero.webp') || '/assets/daddys-store-hero.webp';
+  const heroImage = () => safeUrl(config.store?.hero_image || '/assets/daddys-store-hero.svg') || '/assets/daddys-store-hero.svg';
   const accountCard = a => {
     const gallery=(a.gallery||[]).map(safeUrl).filter(Boolean); const img=gallery[0]||'';
     const inCompare=get(LS.compare,[]).includes(a.id);

@@ -1,0 +1,19 @@
+{
+  "name": "daddys-store-netlify",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "check": "node --check netlify/functions/api.mjs && node --check scripts/create-admin.mjs && node --check static/app.js && node --check tests/smoke.mjs",
+    "admin:create": "node scripts/create-admin.mjs",
+    "test": "node tests/smoke.mjs"
+  },
+  "dependencies": {
+    "nodemailer": "7.0.10",
+    "pg": "8.16.3",
+    "qrcode": "1.5.4"
+  }
+}

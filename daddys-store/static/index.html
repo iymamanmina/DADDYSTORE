@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0d13">
+  <meta name="description" content="DADDYS STORE — premium BGMI inventory marketplace and authorized UC store.">
+  <title>DADDYS STORE | Ultimate BGMI Marketplace</title>
+  <link rel="icon" type="image/webp" href="/assets/daddys-store-logo.webp">
+  <link rel="preload" href="/assets/daddys-store-hero.webp" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="DADDYS STORE home">
+      <img src="/assets/daddys-store-logo.webp" alt="DADDYS STORE royal logo" class="brand-mark">
+      <span><b>DADDYS</b><small>STORE</small></span>
+    </a>
+    <button class="mobile-menu" id="menu-toggle" aria-label="Open menu">☰</button>
+    <nav class="main-nav" id="main-nav">
+      <a href="#home" data-link="home">Home</a>
+      <a href="#marketplace" data-link="marketplace">BGMI IDs</a>
+      <a href="#armory" data-link="armory">Armory</a>
+      <a href="#compare" data-link="compare">Compare</a>
+      <a href="#uc" data-link="uc">UC Store</a>
+      <a href="#sell" data-link="sell">Sell Account</a>
+    </nav>
+    <div class="header-actions">
+      <a class="icon-link" href="#wishlist" title="Wishlist">♡ <span class="hide-mobile">Wishlist</span></a>
+      <a class="icon-link" href="#cart" title="Cart">▣ <span id="cart-count">0</span></a>
+      <a class="btn btn-small btn-outline" href="#customer">Sign in</a>
+    </div>
+  </header>
+
+  <main id="view" class="page-shell" aria-live="polite">
+    <section class="loading-state"><div class="loader"></div><p>Preparing the armory…</p></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand"><span class="eyebrow">THE ULTIMATE INVENTORY MARKETPLACE</span><h2>DADDYS STORE</h2><p>Explore premium gaming inventory, inspect collections and connect with the store through verified order channels.</p></div>
+      <div><b>Explore</b><a href="#marketplace">BGMI IDs</a><a href="#armory">DADDYS ARMORY</a><a href="#uc">UC Store</a><a href="#sell">Sell your account</a><a href="#recent">Recently viewed</a><a href="#wishlist">Wishlist</a></div>
+      <div><b>Support</b><a href="#support">Contact support</a><a href="#faq">FAQ</a><a href="#terms">Terms</a><a href="#privacy">Privacy</a></div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> DADDYS STORE. All rights reserved.</span><span>Independent marketplace. Not affiliated with KRAFTON unless separately authorized.</span></div>
+  </footer>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>

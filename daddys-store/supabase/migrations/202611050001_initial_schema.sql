@@ -189,7 +189,7 @@ create table if not exists public.audit_logs (
 
 -- Store defaults. Admin settings are intentionally initialized with blank contact/payment data.
 insert into public.settings(key,value_json) values
-('store', '{"name":"DADDYS STORE","tagline":"THE ULTIMATE BGMI MARKETPLACE","whatsapp":"","telegram":"","support_email":"","hero_title":"ENTER THE ARMORY","hero_subtitle":"Explore premium inventories, rare collections and authorized UC packages.","hero_image":"/assets/daddys-store-hero.webp"}'::jsonb),
+('store', '{"name":"DADDYS STORE","tagline":"THE ULTIMATE BGMI MARKETPLACE","whatsapp":"","telegram":"","support_email":"","hero_title":"ENTER THE ARMORY","hero_subtitle":"Explore premium inventories, rare collections and authorized UC packages.","hero_image":"/assets/daddys-store-hero.svg"}'::jsonb),
 ('payments', '{"upi_enabled":true,"upi_id":"","payee_name":"DADDYS STORE","qr_image":"","whatsapp_enabled":true,"telegram_enabled":true,"default_method":"whatsapp","instructions":"Orders are confirmed after manual payment verification."}'::jsonb),
 ('policies', '{"account_sales_enabled":false,"terms_url":"/terms","privacy_url":"/privacy","authorization_note":"Only list inventory and transfers for which you hold the required rights and authorization."}'::jsonb)
 on conflict(key) do nothing;
